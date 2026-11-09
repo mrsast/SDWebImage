@@ -332,7 +332,7 @@ static NSString * _defaultDiskCacheDirectory;
     NSData *extendedData;
     if (@available(iOS 11, tvOS 11, macOS 10.13, watchOS 4, *)) {
         NSError *error;
-        extendedData = [NSKeyedArchiver archivedDataWithRootObject:extendedObject requiringSecureCoding:NO error:&error];
+        extendedData = [NSKeyedArchiver archivedDataWithRootObject:extendedObject requiringSecureCoding:YES error:&error];
         if (error) {
             SD_LOG("NSKeyedArchiver archive failed with error: %@", error);
         }
